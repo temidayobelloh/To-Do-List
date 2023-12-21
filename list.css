@@ -80,6 +80,7 @@
   }
   
   .task {
+    background-color: aliceblue;
     color: black;
     margin-top: 20px;
     display: flex;
