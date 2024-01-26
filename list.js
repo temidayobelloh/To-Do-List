@@ -3,7 +3,7 @@ const addTaskButton = document.getElementById('add-task');
 const taskList = document.getElementById('task-list');
 const completedTaskList = document.getElementById('completed-task-list');
 
-addTaskButton.addEventListener('click', function() {
+function addTask() {
   const taskText = newTaskInput.value;
   if (taskText) {
     const taskItem = document.createElement('li');
@@ -36,6 +36,14 @@ addTaskButton.addEventListener('click', function() {
   } else {
     alert('Please enter a task!');
   }
+}
+
+addTaskButton.addEventListener('click', addTask);
+
+newTaskInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    addTask();
+  }
 });
 
 taskList.addEventListener('change', function(event) {
@@ -54,7 +62,3 @@ taskList.addEventListener('change', function(event) {
     }
   }
 });
-
-
-
-
